@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Circle Area</title>
+    </head>
+
+    <body>
+    
+        <script>
+            var x = 0
+            var y = 0
+            var radius = 5
+
+            var a = 3
+            var b = 4
+            
+            var distance = (a - x) * (a - x) + (b - y) * (b - y)
+            var radiusOf = radius**2
+
+            if(distance < radiusOf){
+                document.write(a + " and " + b + " are inside the circle")
+            } else {
+                document.write(a + " and " + b + " are NOT inside the circle")
+            }
+        </script>
+        
+    </body>
+
+</html>

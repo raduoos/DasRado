@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Same array values</title>
+    </head>
+
+    <body>
+        <script>
+            var values = [1,2,3,4,5];
+            document.write(values);
+            var values2 = [2,5,8,9,23];
+            document.write(values2)
+            var coincidences = values.filter(value => values2.includes(value));
+            document.write(coincidences)
+        </script>
+    </body>
+
+</html>

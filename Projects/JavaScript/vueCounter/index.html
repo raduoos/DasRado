@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3.2.47/dist/vue.global.js"></script>
+    <title>Vue Counter | DasRado</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <h1>Counter: {{counter}}</h1>
+      <button @click="increment">+</button>
+      <button @click="decrement">-</button>
+    </div>
+
+    <script>
+      const { createApp, ref } = Vue;
+      createApp({
+        setup () {
+          //creating the variable and we assign it as a 0
+          const counter = ref(0);
+
+          //we create the function to increment the value
+          const increment = () => {
+            counter.value++;
+          };
+
+          //we create the function to decrement the value
+          const decrement = () => {
+            counter.value--;
+          };
+
+          //we return the status of the variables
+          return{
+            counter,
+            increment,
+            decrement
+          };
+
+        }
+      }).mount('#app');
+
+
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Decimal to Binary</title>
+    </head>
+
+    <body>
+
+        <p>Decimal To Binary Converter: </p>
+
+        <script>
+            var decimal = 10
+            var binary = decimal.toString(2)
+            document.write("The digit " + decimal + " is " + binary + " in binary.")
+        </script>
+
+        <div id="container"></div>
+        <button onclick="addParagraph()">Add Paragraph</button>
+        <button onclick="deleteParagraph()">Delete Paragraph</button>
+
+        <script>
+            function addParagraph(){
+                const newParagraph = document.createElement("p")
+
+                newParagraph.innerText = "Testing paragraph!"
+
+                document.getElementById("container").appendChild(newParagraph)
+            }
+
+            function deleteParagraph(){
+                const container = document.getElementById("container")
+
+                if(container.lastElementChild){
+                    container.removeChild(container.lastElementChild)
+                }
+            }
+        </script>
+
+        <!--TODO App-->
+        <p>Task list: </p>
+        <input type="text" id="newTask" placeholder="Add a task">
+        <button onclick="addTask()">Add task</button>
+        <ul id="taskList"></ul>
+
+        <script>
+            function addTask(){
+                const taskText = document.getElementById("newTask").value;
+
+                if(taskText == ""){
+                    return;
+                }
+
+                const newTask = document.createElement("li");
+
+                newTask.innerText = taskText;
+
+                const deleteButton = document.createElement("button");
+
+                deleteButton.innerText = "Delete";
+
+                deleteButton.onclick = function (){
+                    this.parentElement.remove();
+                }
+
+                newTask.appendChild(deleteButton);
+
+                document.getElementById("taskList").appendChild(newTask);
+
+                document.getElementById("newTask").value = "";
+
+            }
+        </script>
+
+        <p>Counter: <span id="counter">0</span></p>
+        <button id="increase">+</button>
+        <button id="decrease">-</button>
+
+        <script>
+            let counter = 0;
+
+            function updateCounter(){
+                document.getElementById("counter").innerText = counter;
+            }
+
+            document.getElementById("increase").addEventListener('click', function (){
+                counter++;
+                updateCounter();
+            });
+
+            document.getElementById("decrease").addEventListener('click', function (){
+                counter--;
+                updateCounter();
+            });
+
+        </script>
+
+
+    </body>
+
+</html>

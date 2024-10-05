@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Actual date</title>
+    </head>
+
+    <body>
+        <script>
+            let date = new Date();
+
+            let hour = date.getHours();
+            let minutes = date.getMinutes();
+            let seconds = date.getSeconds();
+
+            let day = date.getDate();
+            let month = date.getMonth()+1;
+            let year = date.getFullYear();
+
+            if(day < 10){
+                day = '0' + day
+            }
+    
+            if(day < 10){
+                month = '0' + month
+            }
+
+            if(hour < 10){
+                hour = '0' + hour
+            }
+
+            if(minutes < 10){
+                minutes = '0' + minutes
+            }
+
+            if(seconds < 10){
+                seconds = '0' + seconds
+            }
+
+            let dateShow = month + '-' + day + '-' + year;
+            let hourShow = hour + ":" + minutes + ":" + seconds;
+
+            document.write("actual date: " + dateShow + " actual hour: " + hourShow)
+
+            //Reloading every 1 second
+            setTimeout(function(){
+                window.location.reload();
+            }, 1000);
+        </script>
+    </body>
+
+</html>
